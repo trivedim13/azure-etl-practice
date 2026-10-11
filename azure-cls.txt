@@ -1,0 +1,57 @@
+sudo apt update
+sudo apt upgrade -y
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+az version
+
+az login --identity
+
+
+----------List Storage Container---------
+
+az storage container list \
+    --account-name sa1124etl \
+    --auth-mode login \
+    --output table
+
+-----create sample file----	
+echo "Hello Azure Storage from VM" > sample.txt	
+
+----Upload to Blob Storage----
+
+az storage blob upload \
+    --account-name sa1124etl\
+    --container-name input \
+    --name employee.csv \
+    --file employee.csv \
+    --auth-mode login
+	
+-----List Blobs------
+
+az storage blob list \
+    --account-name ethansemployeedata \
+    --container-name employeedata \
+    --auth-mode login \
+    --output table
+	
+-----Download the Blob----
+
+az storage blob download \
+    --account-name ethansemployeedata \
+    --container-name employeedata \
+    --name hello.txt \
+    --file downloaded-hello.txt \
+    --auth-mode login
+
+-----
+
+https://themewagon.com/
+
+
+ethansemployeedata
+	employeedata
+az-cli-demo
+	
+
+az storage
