@@ -30,18 +30,18 @@ az storage blob upload \
 -----List Blobs------
 
 az storage blob list \
-    --account-name ethansemployeedata \
-    --container-name employeedata \
+    --account-name sa1124etl\
+    --container-name input \
     --auth-mode login \
     --output table
 	
 -----Download the Blob----
 
 az storage blob download \
-    --account-name ethansemployeedata \
-    --container-name employeedata \
-    --name hello.txt \
-    --file downloaded-hello.txt \
+    --account-name sa1124etl\
+    --container-name input \
+    --name employee.csv \
+    --file ./input/employee.csv \
     --auth-mode login
 
 -----
