@@ -1,0 +1,3 @@
+[submodule "ethans-1124-etl-practice"]
+	path = ethans-1124-etl-practice
+	url = https://github.com/trivedim13/azure-etl-practice.git
